@@ -1,0 +1,67 @@
+{% extends 'userbase.html'%}
+{%block contents%}
+
+ <section id="intro">
+
+    <div class="intro-text">
+<br><br><br><br><br><br><br><br><br><br><br><br>
+      <p><h2>Predictions</h2></p>
+       <form method="POST" action="{%url 'predictionss'%}" >
+        {% csrf_token %}
+            <br>
+            <label for="age">Age:</label> 
+            <input type="text" id="age" name="age"> 
+            <br>
+            <label for="sex">Sex:</label>
+            <input type="text" id="sex" name="sex">
+            <br>
+            <label for="cp">Chest pain type(cp):</label>
+            <input type="text" id="cp" name="cp">
+            <br>
+            <label for="trestbps">Resting Blood Pressure(trestbps):</label>
+            <input type="text" id="trestbps" name="trestbps">
+            <br>
+            <label for="chol">Serum Cholestora(chol):</label>
+            <input type="text" id="chol" name="chol">
+            <br>
+            <label for="fbs">Fasting Blood Sugar(fbs):</label>
+            <input type="text" id="fbs" name="fbs">
+            <br>
+            <label for="restecg">Resting Electrocardiographic(restecg):</label>
+            <input type="text" id="restecg" name="restecg">
+            <br>
+            <label for="thalach">Maximum Heart Rate Achieved(thalach):</label>
+            <input type="text" id="thalach" name="thalach">
+            <br>
+            <label for="exang">Exercise Induced Angina(exang):</label>
+            <input type="text" id="exang" name="exang">
+            <br>
+            <label for="oldpeak">ST Depression Induced(oldpeak):</label>
+            <input type="text" id="oldpeak" name="oldpeak">
+            <br>
+            <label for="slope">The Slope of the Peak(slope):</label>
+            <input type="text" id="slope" name="slope">
+            <br>
+            <label for="ca">Number of Major Vessels(ca):</label>
+            <input type="text" id="ca" name="ca">
+            <br>
+            <label for="thal">Thallium Stress Test(thal):</label>
+            <input type="text" id="thal" name="thal">
+            <br>
+            <input type="submit" value="Submit">
+
+                   
+
+                        {% if messages %}
+                               {% for message in messages %}
+                               
+                                  <font color='GREEN'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+
+                </table>
+
+            </form>  </p><a class="nav-link" href=""></a>
+    </div>
+  </section>
+{%endblock%}
